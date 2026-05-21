@@ -34,19 +34,20 @@ export const CartProvider = ({ children }) => {
     fetchCart();
   }, [user]);
 
-  const addToCart = async (productId, quantity = 1, size = null) => {
+  const addToCart = async (productId, quantity = 1, size = null, productData = null) => {
     if (!user) {
       const localCart = JSON.parse(localStorage.getItem('elor_cart') || '{"items":[]}');
       const existing = localCart.items.find((i) => i.productId === productId && i.size === size);
       if (existing) {
         existing.quantity += quantity;
+        if (productData) existing.product = productData;
       } else {
         localCart.items.push({
           id: Date.now().toString(),
           productId,
           quantity,
           size,
-          product: { id: productId },
+          product: productData || { id: productId },
         });
       }
       localStorage.setItem('elor_cart', JSON.stringify(localCart));
@@ -59,6 +60,11 @@ export const CartProvider = ({ children }) => {
     } catch (err) {
       console.error('Add to cart error:', err);
     }
+  };
+
+  const addItem = (product, quantity = 1, size = null) => {
+    if (!product?.id) return;
+    return addToCart(product.id, quantity, size, product);
   };
 
   const updateQuantity = async (itemId, quantity) => {
@@ -106,7 +112,7 @@ export const CartProvider = ({ children }) => {
   const cartTotal = cart.items?.reduce((sum, item) => sum + (item.product?.price || 0) * item.quantity, 0) || 0;
 
   return (
-    <CartContext.Provider value={{ cart, loading, cartCount, cartTotal, addToCart, updateQuantity, removeItem, clearCart, fetchCart }}>
+    <CartContext.Provider value={{ cart, loading, cartCount, cartTotal, addToCart, addItem, updateQuantity, removeItem, clearCart, fetchCart }}>
       {children}
     </CartContext.Provider>
   );

@@ -5,7 +5,7 @@ const ProductImages = ({ images = [] }) => {
 
   const displayImages = images.length > 0
     ? images
-    : ['https://images.unsplash.com/photo-1515562141589-9f6b9dc5e7b0?w=600'];
+    : ['/assets/images/gold-jewelry-hero.jpg'];
 
   return (
     <div className="product-images">

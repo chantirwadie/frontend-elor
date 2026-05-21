@@ -12,7 +12,7 @@ const About = () => {
       <section className="about-story">
         <div className="about-grid">
           <div className="about-image">
-            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&h=700&fit=crop" alt="Élor Paris" loading="lazy" />
+            <img src="/assets/images/gold-jewelry-hero.jpg" alt="Élor Paris" loading="lazy" />
           </div>
           <div className="about-content">
             <span className="label">Notre Vision</span>
@@ -38,7 +38,7 @@ const About = () => {
       <section className="about-story" style={{ background: 'var(--cream)' }}>
         <div className="about-grid reverse">
           <div className="about-image">
-            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=700&fit=crop" alt="Acier inoxydable" loading="lazy" />
+            <img src="/assets/images/stainless-jewelry.jpg" alt="Acier inoxydable" loading="lazy" />
           </div>
           <div className="about-content">
             <span className="label">Notre Matériau</span>

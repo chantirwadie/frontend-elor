@@ -21,28 +21,28 @@ const Home = () => {
         </div>
         <div className="mood-grid">
           <a href="/shop?isNewArrival=true" className="mood-card">
-            <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&q=80" alt="Nouveautés" loading="lazy" />
+            <img src="/assets/images/new-arrivals.jpg" alt="Nouveautés" loading="lazy" />
             <div className="mood-card-overlay">
               <h3>Nouveautés</h3>
               <span>Les dernières créations</span>
             </div>
           </a>
           <a href="/shop?isBestSeller=true" className="mood-card">
-            <img src="https://images.unsplash.com/photo-1515562141589-9f6b9dc5e7b0?w=600&q=80" alt="Best Sellers" loading="lazy" />
+            <img src="/assets/images/gold-jewelry-hero.jpg" alt="Best Sellers" loading="lazy" />
             <div className="mood-card-overlay">
               <h3>Best Sellers</h3>
               <span>Les plus aimés</span>
             </div>
           </a>
           <a href="/shop?color=Dor%C3%A9" className="mood-card">
-            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80" alt="Doré Intemporel" loading="lazy" />
+            <img src="/assets/images/stainless-jewelry.jpg" alt="Doré Intemporel" loading="lazy" />
             <div className="mood-card-overlay">
               <h3>Doré Intemporel</h3>
               <span>L'éclat doré</span>
             </div>
           </a>
           <a href="/collections" className="mood-card">
-            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80" alt="Cadeaux Élégants" loading="lazy" />
+            <img src="/assets/images/gift-jewelry.jpg" alt="Cadeaux Élégants" loading="lazy" />
             <div className="mood-card-overlay">
               <h3>Cadeaux Élégants</h3>
               <span>Offrir l'élégance</span>

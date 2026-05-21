@@ -196,7 +196,7 @@
    SHOP BY MOOD
    =========================== */
 .shop-by-mood {
-  padding: var(--space-5xl) 0;
+  padding: 90px 0;
   background: var(--ivory);
 }
 
@@ -215,6 +215,8 @@
   overflow: hidden;
   cursor: pointer;
   border-radius: var(--radius-lg);
+  min-height: 340px;
+  border: 1px solid var(--border-light);
 }
 
 .mood-card img {
@@ -315,7 +317,7 @@
    FEATURED COLLECTIONS
    =========================== */
 .featured-collections {
-  padding: var(--space-5xl) 0;
+  padding: 90px 0;
   background: var(--cream);
 }
 
@@ -334,6 +336,7 @@
   cursor: pointer;
   border-radius: var(--radius-lg);
   min-height: 320px;
+  border: 1px solid rgba(255,255,255,0.32);
 }
 
 .collection-card img {
@@ -394,7 +397,7 @@
    BEST SELLERS
    =========================== */
 .best-sellers {
-  padding: var(--space-5xl) 0;
+  padding: 90px 0;
   background: var(--ivory);
 }
 
@@ -504,7 +507,7 @@
    BENEFITS
    =========================== */
 .benefits {
-  padding: var(--space-5xl) 0;
+  padding: 90px 0;
   background: var(--ivory);
 }
 
@@ -585,7 +588,7 @@
    INSTAGRAM / UGC
    =========================== */
 .instagram-section {
-  padding: var(--space-5xl) 0;
+  padding: 90px 0;
   background: var(--cream);
 }
 
@@ -646,7 +649,7 @@
    TESTIMONIALS
    =========================== */
 .testimonials {
-  padding: var(--space-5xl) 0;
+  padding: 90px 0;
   background: var(--ivory);
 }
 
@@ -742,7 +745,7 @@
    NEWSLETTER
    =========================== */
 .newsletter {
-  padding: var(--space-5xl) 0;
+  padding: 90px 0;
   text-align: center;
   background: linear-gradient(135deg, var(--rose-soft), var(--cream) 50%, var(--champagne));
   position: relative;
@@ -829,27 +832,29 @@
    SHOP / BOUTIQUE PAGE
    =========================== */
 .shop-page {
-  padding-top: calc(var(--announcement-height) + var(--navbar-height) + 40px);
+  padding-top: calc(var(--announcement-height) + var(--navbar-height));
   max-width: var(--max-width);
   margin: 0 auto;
   padding-left: var(--space-lg);
   padding-right: var(--space-lg);
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: var(--space-2xl);
-  min-height: 100vh;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 34px;
+  min-height: auto;
+  padding-bottom: 72px;
 }
 
 .shop-header {
   grid-column: 1 / -1;
   text-align: center;
-  padding: var(--space-3xl) 0 var(--space-xl);
+  padding: 48px 0 var(--space-lg);
 }
 
 .shop-header h1 {
   font-family: var(--font-heading);
   margin-bottom: var(--space-sm);
   font-weight: 400;
+  font-size: var(--h2);
 }
 
 .shop-header .subtitle {
@@ -866,10 +871,11 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--space-md) 0;
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   flex-wrap: wrap;
   gap: var(--space-md);
+  margin-bottom: 0;
 }
 
 .shop-toolbar-left {
@@ -909,11 +915,12 @@
   position: sticky;
   top: calc(var(--announcement-height) + var(--navbar-height) + 20px);
   height: fit-content;
+  align-self: start;
 }
 
 .shop-filters .search-input {
   position: relative;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
 .shop-filters .search-input input {
@@ -923,7 +930,7 @@
   font-size: var(--small);
   background: var(--white);
   color: var(--espresso);
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
   transition: border-color var(--transition-fast);
 }
 
@@ -951,10 +958,24 @@
   padding: var(--space-xl);
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   z-index: 2000;
-  max-height: 80vh;
+  max-height: 82vh;
   overflow-y: auto;
   transform: translateY(100%);
   transition: transform var(--transition);
+}
+
+.shop-results {
+  min-width: 0;
+}
+
+.shop-results .product-grid {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 300px));
+  justify-content: start;
+  gap: 28px;
+}
+
+.shop-empty-reset {
+  margin-top: calc(var(--space-xl) * -1);
 }
 
 .mobile-filter-drawer.open {
@@ -977,10 +998,36 @@
 }
 
 @media (max-width: 768px) {
-  .shop-page { grid-template-columns: 1fr; }
+  .shop-by-mood,
+  .featured-collections,
+  .best-sellers,
+  .benefits,
+  .instagram-section,
+  .testimonials,
+  .newsletter { padding: 56px 0; }
+
+  .shop-page {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+    padding-bottom: 56px;
+  }
+  .shop-header { padding: 36px 0 var(--space-md); }
   .shop-filters { display: none; }
   .shop-toolbar-left .filter-toggle { display: flex; }
   .mobile-filter-drawer { display: block; }
+  .shop-results .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .shop-results .product-grid {
+    grid-template-columns: minmax(0, 360px);
+    justify-content: center;
+  }
 }
 
 /* ===========================
@@ -1562,11 +1609,12 @@
 }
 
 .auth-brand-content .brand-icon {
-  width: 80px;
-  height: 80px;
+  width: 92px;
+  height: 92px;
   margin: 0 auto var(--space-xl);
   border: 1px solid rgba(200,162,74,0.25);
-  border-radius: var(--radius-full);
+  border-radius: 0;
+  background: rgba(255, 253, 248, 0.92);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1580,10 +1628,10 @@
 }
 
 .auth-logo-img {
-  width: 60px;
-  height: 60px;
+  width: 76px;
+  height: 76px;
   object-fit: contain;
-  border-radius: var(--radius-full);
+  border-radius: 0;
 }
 
 .auth-form-wrapper {

@@ -33,7 +33,7 @@ const FeaturedCollections = () => {
             className={`collection-card ${i === 0 ? 'large' : ''}`}
             style={i === 0 ? { gridRow: 'span 2', aspectRatio: 'auto' } : { aspectRatio: '16/9' } }
           >
-            <img src={col.bannerImage || col.image || 'https://images.unsplash.com/photo-1515562141589-9f6b9dc5e7b0?w=800'} alt={col.name} loading="lazy" />
+            <img src={col.bannerImage || col.image || '/assets/images/gold-jewelry-hero.jpg'} alt={col.name} loading="lazy" />
             <div className="collection-card-content">
               <span className="label">{col._count?.products || 0} Pièces</span>
               <h3>{col.name}</h3>

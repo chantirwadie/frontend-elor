@@ -7,11 +7,30 @@ const NewArrivals = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts({ isNewArrival: 'true', limit: 8 })
-      .then((res) => setProducts(res.data.products))
-      .catch(() => {})
-      .finally(() => setLoading(false));
+    const loadProducts = async () => {
+      try {
+        const newArrivalRes = await getProducts({ isNewArrival: 'true', limit: 8 });
+        const newArrivalData = Array.isArray(newArrivalRes.data) ? newArrivalRes.data : newArrivalRes.data.products || [];
+
+        if (newArrivalData.length) {
+          setProducts(newArrivalData);
+          return;
+        }
+
+        const fallbackRes = await getProducts({ limit: 4 });
+        const fallbackData = Array.isArray(fallbackRes.data) ? fallbackRes.data : fallbackRes.data.products || [];
+        setProducts(fallbackData.slice(0, 4));
+      } catch {
+        setProducts([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProducts();
   }, []);
+
+  if (!loading && products.length === 0) return null;
 
   return (
     <section className="section" style={{ background: 'var(--cream)' }}>

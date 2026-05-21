@@ -7,7 +7,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
   return (
     <div className="cart-item">
       <div className="cart-item-image">
-        <img src={product?.images?.[0] || 'https://images.unsplash.com/photo-1515562141589-9f6b9dc5e7b0?w=200'} alt={product?.name} />
+        <img src={product?.images?.[0] || '/assets/images/gold-jewelry-hero.jpg'} alt={product?.name} />
       </div>
       <div className="cart-item-info">
         <Link to={`/shop/${product?.slug}`} className="cart-item-name">{product?.name || 'Produit'}</Link>

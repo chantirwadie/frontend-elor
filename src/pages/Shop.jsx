@@ -38,6 +38,10 @@ const Shop = () => {
     setSearchParams(params);
   };
 
+  const resetFilters = () => {
+    setSearchParams({});
+  };
+
   useEffect(() => {
     setLoading(true);
     setError('');
@@ -80,7 +84,9 @@ const Shop = () => {
             </svg>
             Filtres
           </button>
-          <span className="result-count">{products.length} produits</span>
+          <span className="result-count">
+            {products.length > 1 ? `${products.length} produits` : `${products.length} produit`}
+          </span>
         </div>
         <div>
           <select value={filters.sort} onChange={(e) => updateFilters({ ...filters, sort: e.target.value })}>
@@ -107,8 +113,18 @@ const Shop = () => {
         <ProductFilters categories={categories} collections={collections} filters={filters} onChange={updateFilters} />
       </div>
 
-      <div>
-        <ProductGrid products={products} loading={loading} error={error} />
+      <div className="shop-results">
+        <ProductGrid
+          products={products}
+          loading={loading}
+          error={error}
+          emptyMessage="Aucun bijou ne correspond à ces filtres."
+          emptyAction={(
+            <button type="button" className="btn btn-outline btn-sm shop-empty-reset" onClick={resetFilters}>
+              Effacer les filtres
+            </button>
+          )}
+        />
 
         {totalPages > 1 && (
           <div className="pagination">

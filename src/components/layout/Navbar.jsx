@@ -38,7 +38,7 @@ const Navbar = () => {
           <div className="navbar-left">
             <Link to="/" className="navbar-logo">
               <img src="/images/logo.jpg" alt="Élor Paris" className="navbar-logo-img" />
-              <span>Élor <span>Paris</span></span>
+              <span className="navbar-logo-text">Élor <span>Paris</span></span>
             </Link>
 
             <div className="navbar-links">

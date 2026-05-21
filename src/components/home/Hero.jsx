@@ -12,7 +12,7 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-bg">
         <img
-          src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1600&q=80"
+          src="/assets/images/gold-jewelry-hero.jpg"
           alt="Élor Paris bijoux"
           loading="eager"
         />
@@ -50,7 +50,7 @@ const Hero = () => {
 
       <div className="hero-floating">
         <img
-          src="https://images.unsplash.com/photo-1602751584558-8ba73aad10e4?w=400&q=80"
+          src="/assets/images/jewelry-style.jpg"
           alt="Bijou Élor Paris"
         />
         <h4>Collier Étoile Dorée</h4>

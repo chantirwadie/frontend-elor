@@ -22,7 +22,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand">
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)', marginBottom: 'var(--space-md)' }}>
+          <div className="footer-brand-mark">
             <img src="/images/logo.jpg" alt="Élor Paris" className="footer-logo-img" />
             <h3>{siteContent.brand.name}</h3>
           </div>
@@ -66,16 +66,15 @@ const Footer = () => {
           <p style={{ fontSize: 'var(--small)', marginBottom: 'var(--space-md)', color: 'var(--muted)' }}>
             Recevez nos nouveautés et offres exclusives
           </p>
-          <form onSubmit={handleSubscribe} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
+          <form onSubmit={handleSubscribe} className="footer-newsletter-form">
             <input
               type="email"
               placeholder="Votre email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              style={{ padding: '12px 16px', border: '1px solid rgba(232, 213, 183, 0.2)', background: 'rgba(255,255,255,0.05)', color: 'var(--champagne)', fontSize: 'var(--small)', outline: 'none' }}
             />
-            <button type="submit" style={{ padding: '10px 20px', background: 'var(--gold)', color: 'var(--white)', textTransform: 'uppercase', letterSpacing: '1.5px', fontSize: 'var(--tiny)', fontWeight: 500, border: 'none', cursor: 'pointer' }}>
+            <button type="submit">
               S'inscrire
             </button>
           </form>

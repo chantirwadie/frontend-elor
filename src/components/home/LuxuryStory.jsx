@@ -4,7 +4,7 @@ const LuxuryStory = () => {
       <div className="editorial-grid">
         <div className="editorial-image">
           <img
-            src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&h=1000&fit=crop"
+            src="/assets/images/gift-jewelry.jpg"
             alt="Élor Paris bijoux"
             loading="lazy"
           />

@@ -7,11 +7,30 @@ const BestSellers = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts({ isBestSeller: 'true', limit: 8 })
-      .then((res) => setProducts(res.data.products))
-      .catch(() => {})
-      .finally(() => setLoading(false));
+    const loadProducts = async () => {
+      try {
+        const bestSellerRes = await getProducts({ isBestSeller: 'true', limit: 8 });
+        const bestSellerData = Array.isArray(bestSellerRes.data) ? bestSellerRes.data : bestSellerRes.data.products || [];
+
+        if (bestSellerData.length) {
+          setProducts(bestSellerData);
+          return;
+        }
+
+        const fallbackRes = await getProducts({ limit: 4 });
+        const fallbackData = Array.isArray(fallbackRes.data) ? fallbackRes.data : fallbackRes.data.products || [];
+        setProducts(fallbackData.slice(0, 4));
+      } catch {
+        setProducts([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProducts();
   }, []);
+
+  if (!loading && products.length === 0) return null;
 
   return (
     <section className="best-sellers">

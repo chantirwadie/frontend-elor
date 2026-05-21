@@ -53,7 +53,7 @@
 .navbar-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--space-xl);
   height: 100%;
   display: flex;
   align-items: center;
@@ -63,13 +63,13 @@
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: var(--space-2xl);
+  gap: var(--space-xl);
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
 }
 
@@ -79,11 +79,14 @@
   object-fit: contain;
   border-radius: 0;
   flex-shrink: 0;
+  background: rgba(255, 253, 248, 0.86);
+  border: 1px solid rgba(232, 213, 183, 0.75);
+  padding: 3px;
 }
 
 .navbar-logo-text {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: 600;
   color: var(--espresso);
   letter-spacing: 0.5px;
@@ -114,8 +117,8 @@
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: var(--space-2xl);
-  margin-left: var(--space-2xl);
+  gap: 36px;
+  margin-left: var(--space-lg);
 }
 
 .navbar-links a {
@@ -153,9 +156,10 @@
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 6px;
 }
 
+.navbar-actions a,
 .navbar-actions button {
   position: relative;
   display: flex;
@@ -167,6 +171,7 @@
   transition: background var(--transition-fast);
 }
 
+.navbar-actions a:hover,
 .navbar-actions button:hover {
   background: rgba(200, 162, 74, 0.1);
 }
@@ -277,7 +282,8 @@
 @media (max-width: 768px) {
   .navbar-links { display: none; }
   .mobile-menu-btn { display: flex; }
-  .navbar-logo { font-size: 1.3rem; }
+  .navbar-logo-img { width: 36px; height: 36px; }
+  .navbar-logo-text { font-size: 1.2rem; }
 }
 
 /* ===========================
@@ -286,16 +292,23 @@
 .footer {
   background: var(--espresso);
   color: var(--champagne);
-  padding: var(--space-5xl) 0 var(--space-xl);
+  padding: 76px 0 var(--space-xl);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--space-2xl);
+  grid-template-columns: minmax(280px, 1.45fr) 0.85fr 1fr minmax(240px, 1fr);
+  gap: 56px;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--space-lg);
+}
+
+.footer-brand-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
 }
 
 .footer-logo-img {
@@ -304,7 +317,8 @@
   object-fit: contain;
   border-radius: 0;
   flex-shrink: 0;
-  background: var(--champagne);
+  background: rgba(255, 253, 248, 0.94);
+  border: 1px solid rgba(232, 213, 183, 0.45);
   padding: 4px;
 }
 
@@ -312,7 +326,7 @@
   font-family: var(--font-heading);
   font-size: 1.5rem;
   color: var(--gold);
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
 }
 
 .footer-brand p {
@@ -334,9 +348,49 @@
 .footer h4 {
   font-family: var(--font-heading);
   color: var(--gold);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   font-size: 1rem;
   letter-spacing: 0.5px;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-newsletter-form input {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(232, 213, 183, 0.26);
+  background: rgba(255,255,255,0.055);
+  color: var(--champagne);
+  font-size: var(--small);
+  outline: none;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.footer-newsletter-form input:focus {
+  border-color: rgba(200, 162, 74, 0.75);
+  background: rgba(255,255,255,0.08);
+}
+
+.footer-newsletter-form button {
+  height: 42px;
+  background: var(--gold);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: var(--tiny);
+  font-weight: 600;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.footer-newsletter-form button:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
 }
 
 .footer-links a {
@@ -429,14 +483,18 @@
   padding-bottom: var(--space-xl);
   border-bottom: 1px solid rgba(232, 213, 183, 0.1);
   margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
 }
 
 .admin-logo-img {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
   border-radius: 0;
   flex-shrink: 0;
+  background: rgba(255, 253, 248, 0.9);
+  border: 1px solid rgba(232, 213, 183, 0.32);
+  padding: 3px;
 }
 
 .admin-sidebar-logo span { color: var(--gold); }

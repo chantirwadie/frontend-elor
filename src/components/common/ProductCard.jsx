@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
       <Link to={`/shop/${product.slug}`}>
         <div className="product-card-image">
           <img
-            src={product.images?.[0] || 'https://images.unsplash.com/photo-1515562141589-9f6b9dc5e7b0?w=600'}
+            src={product.images?.[0] || '/assets/images/gold-jewelry-hero.jpg'}
             alt={product.name}
             loading="lazy"
           />
