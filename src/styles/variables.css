@@ -1,0 +1,76 @@
+:root {
+  --cream: #FAF4EC;
+  --ivory: #FFFDF8;
+  --champagne: #E8D5B7;
+  --gold: #C8A24A;
+  --gold-dark: #9B7A2F;
+  --gold-light: #DFC78A;
+  --rose: #F5DDE3;
+  --rose-soft: #FFF0F3;
+  --espresso: #241915;
+  --brown: #4A342E;
+  --black: #101010;
+  --white: #FFFFFF;
+  --muted: #8A7A72;
+  --border: rgba(36, 25, 21, 0.12);
+  --border-light: rgba(36, 25, 21, 0.06);
+
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-serif-alt: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --h1: clamp(2.8rem, 6vw, 5rem);
+  --h1-hero: clamp(3.2rem, 7vw, 5.5rem);
+  --h2: clamp(2rem, 4vw, 3.2rem);
+  --h3: clamp(1.4rem, 2.5vw, 2rem);
+  --h4: clamp(1.1rem, 1.5vw, 1.35rem);
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+  --space-6xl: 160px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 50%;
+
+  --shadow-sm: 0 1px 4px rgba(36, 25, 21, 0.04);
+  --shadow-md: 0 4px 20px rgba(36, 25, 21, 0.06);
+  --shadow-lg: 0 12px 48px rgba(36, 25, 21, 0.08);
+  --shadow-xl: 0 24px 80px rgba(36, 25, 21, 0.1);
+  --shadow-gold: 0 4px 24px rgba(200, 162, 74, 0.15);
+  --shadow-card: 0 2px 12px rgba(36, 25, 21, 0.05);
+  --shadow-card-hover: 0 12px 40px rgba(36, 25, 21, 0.08);
+
+  --transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: 0.25s ease;
+  --transition-slow: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --max-width: 1280px;
+  --navbar-height: 80px;
+  --announcement-height: 36px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --h1: clamp(2rem, 8vw, 2.8rem);
+    --h1-hero: clamp(2.2rem, 9vw, 2.8rem);
+    --h2: clamp(1.6rem, 6vw, 2rem);
+    --h3: clamp(1.2rem, 4vw, 1.4rem);
+    --navbar-height: 64px;
+    --announcement-height: 32px;
+    --space-6xl: 100px;
+    --space-5xl: 80px;
+    --space-4xl: 64px;
+    --space-3xl: 48px;
+    --space-2xl: 32px;
+  }
+}
