@@ -70,7 +70,9 @@ const AppRoutes = () => {
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/products" element={<AdminProducts />} />
         <Route path="/admin/products/new" element={<AdminAddProduct />} />
+        <Route path="/admin/products/add" element={<AdminAddProduct />} />
         <Route path="/admin/products/:id/edit" element={<AdminEditProduct />} />
+        <Route path="/admin/products/edit/:id" element={<AdminEditProduct />} />
         <Route path="/admin/categories" element={<AdminCategories />} />
         <Route path="/admin/collections" element={<AdminCollections />} />
         <Route path="/admin/orders" element={<AdminOrders />} />
